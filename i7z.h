@@ -7,7 +7,7 @@
  *
  *   modified for ivy bridge May 2013
  *   Daniel McLellan <daniel.mclellan@gmail.com>
- * 
+ *
  * ----------------------------------------------------------------------- */
 
 #include <sys/time.h>
@@ -33,6 +33,7 @@ struct core_i7_version{
     bool nehalem;
     bool sandy_bridge;
     bool ivy_bridge;
+    bool haswell;
 };
 
 struct program_options{
@@ -40,7 +41,7 @@ struct program_options{
     int templogging;
     int cstatelogging;
     //always put variables before the below structure, something fishy going on and the variable is reset
-    struct core_i7_version i7_version;    
+    struct core_i7_version i7_version;
 };
 
 /// Logging Functions
@@ -58,18 +59,10 @@ void logCpuCstates_single(float value);
 void logCpuCstates_single_c(char* value);
 //void logCpuCstates_single_d(int value);
 void logCpuCstates_single_ts(struct timespec  *value) ;
+
 void logCpuCstates_dual(float value, int);
 void logCpuCstates_dual_c(char* value, int);
 void logCpuCstates_dual_ts(struct timespec  *value, int) ;
-
-void logCpuTemp_single(float value);
-void logCpuTemp_single_c(char* value);
-//void logCpuTemp_single_d(int value);
-void logCpuTemp_single_ts(struct timespec  *value) ;
-void logCpuTemp_dual(float value, int);
-void logCpuTemp_dual_c(char* value, int);
-void logCpuTemp_dual_ts(struct timespec  *value, int) ;
-
 
 struct cpu_heirarchy_info {
     int max_online_cpu;
@@ -157,7 +150,7 @@ void get_siblings_list(struct cpu_heirarchy_info* chi);
 void get_package_ids(struct cpu_heirarchy_info* chi);
 void print_cpu_list(struct cpu_heirarchy_info chi);
 void construct_cpu_hierarchy(struct cpu_heirarchy_info *chi);
-void Print_Information_Processor(bool*, bool*, bool*);
+void Print_Information_Processor(bool*, bool*, bool*, bool*);
 void Test_Or_Make_MSR_DEVICE_FILES();
 
 

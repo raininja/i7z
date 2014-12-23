@@ -36,9 +36,12 @@ Version and Bug History:
 v git-93 (27/May/2013)
 	added full (lol) support for Ivy Bridge
 
+v svn 103 (Sep/2012)
+	some fixes for segv fault when cpuid code is not inline
+	
 v svn-43 (27/May/2010)
 	moved some global variables into individual functions.
-    removed a redundant line that was being printed
+        removed a redundant line that was bieng printed
 	GUI version should support upto 12 physical cores. can be easily edited for more cores.
 
 v svn-40 (27/May/2010)
@@ -95,5 +98,7 @@ v0.01- very simple program to examine i7 feature clocking and running with speed
   
 
 
-coder: Abhishek Jaiantilal (abhishek.jaiantilal@colorado.edu)
+coder: Abhishek Jaiantilal (abhishek.jaiantilal@colorado.edu). And suggestions/help from multiple people, let me know if i am missing your contribution.
 contributor: raininja <daniel.mclellan@gmail.com>
+contributor: Richard Hull <rm_hull@yahoo.co.uk>
+contributor: andareed
